@@ -229,7 +229,7 @@ log_dir=/var/log/sahara
 # List of plugins to be loaded. Sahara preserves the order of
 # the list when returning it. (list value)
 #plugins=vanilla,hdp,idh
-plugins=vanilla
+plugins=vanilla,hdp,idh
 
 #
 # Options defined in sahara.service.edp.job_manager
