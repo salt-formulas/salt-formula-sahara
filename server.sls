@@ -47,7 +47,7 @@ sahara_etc_dir:
 
 sahara_install_database:
   cmd.run:
-  - name: /srv/sahara/bin/sahara-db-manage --config-file /srv/sahara/etc/sahara.conf
+  - name: /srv/sahara/bin/sahara-db-manage --config-file /srv/sahara/etc/sahara.conf upgrade head
   - require:
     - file: /srv/sahara/etc/sahara.conf
 
