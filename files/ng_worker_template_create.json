@@ -1,0 +1,8 @@
+{
+    "name": "test-worker-tmpl",
+    "flavor_id": "2",
+    "plugin_name": "vanilla",
+    "hadoop_version": "1.2.1",
+    "node_processes": ["tasktracker", "datanode"],
+    "auto_security_group": True
+}
