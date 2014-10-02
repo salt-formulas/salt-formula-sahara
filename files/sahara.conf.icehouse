@@ -26,7 +26,7 @@ port={{ server.bind.port }}
 # "auto_assign_floating_ip=True" in nova.conf. If Neutron is
 # used for networking, make sure that all Node Groups have
 # "floating_ip_pool" parameter defined. (boolean value)
-#use_floating_ips=true
+use_floating_ips=true
 
 # The suffix of the node's FQDN. In nova-network that is the
 # dhcp_domain config parameter. (string value)
@@ -34,7 +34,7 @@ port={{ server.bind.port }}
 
 # Use Neutron Networking (False indicates the use of Nova
 # networking). (boolean value)
-#use_neutron=false
+use_neutron=true
 
 # Use network namespaces for communication (only valid to use
 # in conjunction with use_neutron=True). (boolean value)
@@ -47,7 +47,7 @@ port={{ server.bind.port }}
 
 # Protocol used to access OpenStack Identity service. (string
 # value)
-#os_auth_protocol=http
+os_auth_protocol=http
 
 # IP or hostname of machine on which OpenStack Identity
 # service is located. (string value)

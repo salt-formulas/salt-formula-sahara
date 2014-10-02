@@ -51,3 +51,4 @@ Make sure that image is registered correctly
 
 * http://docs.openstack.org/developer/sahara/userdoc/vanilla_plugin.html
 * http://docs.openstack.org/developer/sahara/devref/quickstart.html
+* http://docs.openstack.org/developer/sahara/horizon/installation.guide.html
