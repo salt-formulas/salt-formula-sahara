@@ -20,7 +20,7 @@ sahara_packages:
 sahara_user:
   user.present:
   - name: sahara
-  - system: True
+  - shell: /bin/bash
   - home: /srv/sahara
   - require:
     - virtualenv: /srv/sahara
