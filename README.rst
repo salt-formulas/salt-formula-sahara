@@ -1,20 +1,23 @@
+========================
+Sahara Data Processing
+========================
 
-# Sahara Data Processing
+Sample pillar
+================
 
-
-## Sample pillar
+.. code-block:: yaml
 
     sahara:
       server:
         enabled: true
-        version: icehouse
+        version: kilo
         bind:
-          address: 0.0.0.0
+          host: 0.0.0.0
           port: 8386
         database:
-          engine: postgresql
+          engine: mysql
           host: 127.0.0.1
-          port: 5432
+          port: 3306
           name: sahara
           user: sahara
           password: password
@@ -27,7 +30,8 @@
           user: sahara
           password: password
 
-## Usage
+Usage
+=======
 
 Get Vanilla glance images
 
@@ -47,7 +51,9 @@ Make sure that image is registered correctly
 
     sahara image-list
 
-## Read more
+Read more
+==========
 
 * http://docs.openstack.org/developer/sahara/userdoc/vanilla_plugin.html
 * http://docs.openstack.org/developer/sahara/devref/quickstart.html
+* http://docs.openstack.org/developer/sahara/horizon/installation.guide.html

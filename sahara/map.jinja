@@ -1,0 +1,10 @@
+
+{% set server = salt['grains.filter_by']({
+    'Debian': {
+        'pkgs': ['sahara-api','sahara-common', 'sahara-engine','python-sahara','python-saharaclient'],
+        'services': ['sahara-api', 'sahara-engine'],
+    },
+    'RedHat': {
+        'pkgs': ['openstack-sahara'],
+    },
+}, merge=salt['pillar.get']('sahara:server')) %}
