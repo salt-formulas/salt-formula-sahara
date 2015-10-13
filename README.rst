@@ -1,8 +1,11 @@
+========================
+Sahara Data Processing
+========================
 
-# Sahara Data Processing
+Sample pillar
+================
 
-
-## Sample pillar
+.. code-block:: yaml
 
     sahara:
       server:
@@ -27,7 +30,8 @@
           user: sahara
           password: password
 
-## Usage
+Usage
+=======
 
 Get Vanilla glance images
 
@@ -47,7 +51,8 @@ Make sure that image is registered correctly
 
     sahara image-list
 
-## Read more
+Read more
+==========
 
 * http://docs.openstack.org/developer/sahara/userdoc/vanilla_plugin.html
 * http://docs.openstack.org/developer/sahara/devref/quickstart.html

@@ -1,0 +1,55 @@
+{%- from "sahara/map.jinja" import server with context %}
+[oslo_messaging_rabbit]
+
+rabbit_login_method=AMQPLAIN
+kombu_reconnect_delay=1.0
+rabbit_retry_backoff=2
+rabbit_use_ssl=False
+rabbit_retry_interval=1
+rabbit_max_retries=0
+rabbit_host = {{ server.message_queue.host }}
+rabbit_port = {{ server.message_queue.port }}
+rabbit_userid = {{ server.message_queue.user }}
+rabbit_password = {{ server.message_queue.password }}
+rabbit_virtual_host = {{ server.message_queue.virtual_host }}
+
+[DEFAULT]
+{%- if server.notification %}
+enable_notifications=True
+notification_topics=notifications
+notification_driver=messaging
+{%- endif %}
+
+control_exchange=openstack
+infrastructure_engine=direct
+plugins=ambari,cdh,mapr,spark,vanilla
+
+log_dir=/var/log/sahara
+
+host={{ server.bind.host }}
+port={{ server.bind.port }}
+
+verbose=True
+use_syslog=True
+debug=False
+
+use_floating_ips=True
+use_neutron=True
+
+rpc_backend=rabbit
+api_workers=4
+
+[object_store_access]
+
+
+[keystone_authtoken]
+identity_uri=http://{{ server.identity.host }}:35357/
+auth_uri=http://{{ server.identity.host }}:5000/v2.0/
+admin_tenant_name={{ server.identity.tenant }}
+admin_password={{ server.identity.password }}
+admin_user={{ server.identity.user }}
+
+[database]
+idle_timeout=3600
+max_retries=10
+connection = {{ server.database.engine }}://{{ server.database.user }}:{{ server.database.password }}@{{ server.database.host }}/{{ server.database.name }}
