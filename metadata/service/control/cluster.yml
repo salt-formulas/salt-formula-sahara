@@ -2,7 +2,7 @@ applications:
 - sahara
 parameters:
   _param:
-    sahara_version: kilo
+    sahara_version: liberty
   sahara:
     server:
       enabled: true
