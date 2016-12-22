@@ -99,9 +99,12 @@ use_syslog=false
 plugins=vanilla,hdp,spark,cdh
 
 rpc_backend=rabbit
+{%- if server.message_queue.members is defined %}
+rabbit_hosts={% for member in server.message_queue.members %}{{ member.host }}:{{ server.message_queue.port }}{% if not loop.last %},{% endif %}{% endfor %}
+{%- else %}
 rabbit_host={{ server.message_queue.host }}
 rabbit_port={{ server.message_queue.port }}
-rabbit_hosts=$rabbit_host:$rabbit_port
+{%- endif %}
 rabbit_userid={{ server.message_queue.user }}
 rabbit_password={{ server.message_queue.password }}
 rabbit_virtual_host={{ server.message_queue.virtual_host }}
