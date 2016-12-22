@@ -29,6 +29,16 @@ Sample pillar
           tenant: sahara
           user: sahara
           password: password
+        message_queue:
+          engine: rabbitmq
+          port: 5672
+          members:
+          - host: 192.168.1.13
+          - host: 192.168.1.14
+          - host: 192.168.1.15
+          user: openstack
+          password: supersecret
+          virtual_host: '/openstack'
 
 Usage
 =======
@@ -42,6 +52,8 @@ Get Vanilla glance images
 
 Register image in sahara
 
+.. code-block:: bash
+
     sahara image-register --image-id $IMAGE_ID --username ubuntu
 
     sahara image-add-tag --image-id $IMAGE_ID --tag vanilla
@@ -49,7 +61,10 @@ Register image in sahara
 
 Make sure that image is registered correctly
 
+.. code-block:: bash
+
     sahara image-list
+
 
 Read more
 ==========
