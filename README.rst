@@ -1,6 +1,6 @@
-=============
-Sahara fomula
-=============
+==============
+Sahara formula
+==============
 
 The Sahara project provides a simple means to provision a data-intensive application cluster (Hadoop or Spark) on top of OpenStack.
 
