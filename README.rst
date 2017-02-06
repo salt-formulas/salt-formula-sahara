@@ -1,9 +1,12 @@
-========================
-Sahara Data Processing
-========================
+=============
+Sahara fomula
+=============
 
-Sample pillar
-================
+The Sahara project provides a simple means to provision a data-intensive application cluster (Hadoop or Spark) on top of OpenStack.
+
+
+Sample pillars
+==============
 
 .. code-block:: yaml
 
@@ -40,8 +43,9 @@ Sample pillar
           password: supersecret
           virtual_host: '/openstack'
 
+
 Usage
-=======
+=====
 
 Get Vanilla glance images
 
@@ -66,12 +70,13 @@ Make sure that image is registered correctly
     sahara image-list
 
 
-Read more
-==========
+External links
+==============
 
 * http://docs.openstack.org/developer/sahara/userdoc/vanilla_plugin.html
 * http://docs.openstack.org/developer/sahara/devref/quickstart.html
 * http://docs.openstack.org/developer/sahara/horizon/installation.guide.html
+
 
 Documentation and Bugs
 ======================
