@@ -10,6 +10,6 @@ Vcs-Git: https://github.com/tcpcloud/salt-formula-sahara.git
 
 Package: salt-formula-sahara
 Architecture: all
-Depends: ${misc:Depends}, salt-master, reclass
+Depends: ${misc:Depends}
 Description: Sahara Salt formula
  Install and configure Sahara server and client.
